@@ -31,13 +31,36 @@ This project is a simple search engine built using Flask and PostgreSQL. It allo
    - Create a database named `search_engine_db`.
    - Update the database connection parameters in `app.py` to match your PostgreSQL setup.
 
-4. **Run the Flask application:**
+## Deployment
+
+### Running with Waitress (Production Server)
+
+To run your Flask application with Waitress, follow these steps:
+
+1. Install Waitress:
 
    ```bash
-   python app.py
+   pip install waitress
    ```
 
-   The application will be accessible at [http://127.0.0.1:5000](http://127.0.0.1:5000).
+2. Run the application:
+
+   ```bash
+   waitress-serve --listen=0.0.0.0:5500 app:app
+   ```
+
+   This command starts the Waitress server and binds it to port 5500. The application will be accessible at [http://0.0.0.0:5500](http://0.0.0.0:5500).
+
+### Running with Flask Development Server (For Testing)
+
+During development, you can use the Flask development server:
+
+```bash
+python app.py
+```
+
+Visit [http://127.0.0.1:5000](http://127.0.0.1:5000) to access the application.
+
 
 ## Usage
 
