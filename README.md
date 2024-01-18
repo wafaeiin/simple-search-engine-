@@ -28,8 +28,31 @@ This project is a simple search engine built using Flask and PostgreSQL. It allo
 
 3. **Set up the PostgreSQL database:**
 
-   - Create a database named `search_engine_db`.
+   - Create a PostgreSQL database named `search_engine_db`.
    - Update the database connection parameters in `app.py` to match your PostgreSQL setup.
+
+      ```python
+      # app.py
+      db_params = {
+          'dbname': 'search_engine_db',
+          'user': 'postgres',
+          'password': 'admin', 
+          'host': 'localhost',
+          'port': '5432'
+      }
+      ```
+
+   - Run the following command to create the database schema:
+
+      ```bash
+      psql -U postgres -d search_engine_db -a -f create_tables.sql
+      ```
+
+   - Run the following command to insert sample data into the database:
+
+      ```bash
+      psql -U postgres -d search_engine_db -a -f init_data.sql
+      ```
 
 ## Deployment
 
@@ -73,6 +96,7 @@ Visit [http://127.0.0.1:5000](http://127.0.0.1:5000) to access the application.
 - `app.py`: Main Flask application file.
 - `static/`: Folder containing static files (HTML, CSS, JS).
 - `requirements.txt`: List of Python dependencies.
+
 
 ## License
 
