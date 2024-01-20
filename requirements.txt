@@ -1,3 +1,4 @@
-Flask
-psycopg2
-waitress
+Flask              # Web framework for building APIs
+nltk               # Natural Language Toolkit for text processing
+psycopg2           # PostgreSQL adapter for Python
+waitress          # WSGI server for serving Flask applications
